@@ -173,4 +173,25 @@ where latitude_deg in (
     from airport);
 <img width="515" alt="Näyttökuva 2024-09-28 kello 22 01 50" src="https://github.com/user-attachments/assets/abba8792-9cd8-42ba-b7c3-a831fe1dfb70">
 
+04 Päivityskyselyt
 
+1.
+update game
+set co2_consumed = (
+    select co2_consumed + 500
+    from game
+    where screen_name = "Vesa"),
+    location = (
+        select ident
+        from airport
+        where name = "Nottingham Airport")
+where screen_name = "Vesa";
+<img width="515" alt="Näyttökuva 2024-09-28 kello 22 34 03" src="https://github.com/user-attachments/assets/7f021887-f559-4f51-a98f-0cb1d3892a54">
+
+2.
+delete from goal_reached;
+<img width="515" alt="Näyttökuva 2024-09-28 kello 22 35 55" src="https://github.com/user-attachments/assets/c7fd1c91-3232-4b55-a1e9-8e4f14066f86">
+
+3.
+delete from game;
+<img width="515" alt="Näyttökuva 2024-09-28 kello 22 36 42" src="https://github.com/user-attachments/assets/1ef8098a-879d-44bf-bb9f-6bf7bf0a76af">
