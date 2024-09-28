@@ -1,4 +1,5 @@
 05 Join
+
 1. 
 select country.name as "country name", airport.name as "airport name"
 from airport
