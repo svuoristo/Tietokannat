@@ -132,5 +132,45 @@ order by count(*) DESC
 limit 50;
 <img width="515" alt="Näyttökuva 2024-09-28 kello 21 38 54" src="https://github.com/user-attachments/assets/2492114c-8ddb-433d-a195-79d94d6b8cc7">
 
-6
+6.
+select country.name
+from country
+inner join airport on airport.iso_country = country.iso_country
+group by airport.iso_country
+having count(*) > 1000;
+<img width="515" alt="Näyttökuva 2024-09-28 kello 21 47 19" src="https://github.com/user-attachments/assets/474f513b-09e0-4f6c-be94-3f9975e89e6e">
+
+7.
+select name
+from airport
+where elevation_ft in (
+    select max(elevation_ft)
+    from airport
+    );
+<img width="515" alt="Näyttökuva 2024-09-28 kello 21 49 38" src="https://github.com/user-attachments/assets/a9d4c2e3-30ec-49e5-97da-53fda5a199f1">
+
+8.
+select country.name
+from country
+inner join airport on airport.iso_country = country.iso_country
+where elevation_ft in (
+    select max(elevation_ft)
+    from airport);
+<img width="515" alt="Näyttökuva 2024-09-28 kello 21 51 54" src="https://github.com/user-attachments/assets/e03261bd-2ee3-419c-bc6b-50bc8a1ed9d1">
+
+9.
+select count(*)
+from game, goal_reached
+where id = game_id and screen_name = "Vesa"
+group by screen_name;
+<img width="515" alt="Näyttökuva 2024-09-28 kello 21 58 02" src="https://github.com/user-attachments/assets/51fa27ff-a8f7-4deb-a1dd-74c82241d0e4">
+
+10.
+select name
+from airport
+where latitude_deg in (
+    select min(latitude_deg)
+    from airport);
+<img width="515" alt="Näyttökuva 2024-09-28 kello 22 01 50" src="https://github.com/user-attachments/assets/abba8792-9cd8-42ba-b7c3-a831fe1dfb70">
+
 
