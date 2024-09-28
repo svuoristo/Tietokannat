@@ -1,3 +1,5 @@
+Aiemmmat tehtävät olin ehtinyt palauttaa moodlessa ennen uutta ohjeistusta.
+
 05 Join
 
 1. 
